@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void jump()
+    void jump() // LOL QUIRKY
     {
         if(jumpVel != 0)
         {
