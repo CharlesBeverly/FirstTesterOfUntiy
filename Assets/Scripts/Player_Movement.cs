@@ -6,23 +6,26 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     Rigidbody2D rb;
-    bool can_jump;
+    public bool can_jump;
     bool jumping = false;
     float jumpVel = 0;
+    BoxCollider2D HurtBox;
+
     // Start is called before the first frame update
     void Start()
     {
         can_jump = true;
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
+        HurtBox = GetComponentInChildren<BoxCollider2D>();
     }
 
-    void jump() // LOL QUIRKY
+    void jump() 
     {
         if(jumpVel != 0)
         {
             if(rb.velocity.y < 10)
             {
-                Debug.Log(rb.velocity.y);
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + jumpVel);
             }
             else
