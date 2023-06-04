@@ -19,10 +19,11 @@ public class HurtBoxJumpDetector : MonoBehaviour
         transform.position = player.transform.position;
     }
     // Update is called once per frame
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        UnityEngine.Debug.Log("COLLIDED");
         player.GetComponent<Player_Movement>().can_jump = true;
         UnityEngine.Debug.Log(collision.gameObject.name);
     }
-    
+
 }
