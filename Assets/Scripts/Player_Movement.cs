@@ -24,7 +24,7 @@ public class Player_Movement : MonoBehaviour
         HurtBox = GetComponentInChildren<BoxCollider2D>();
     }
 
-    void jump() 
+    void jump()
     {
         if(jumpVel != 0)
         {
